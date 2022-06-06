@@ -7,12 +7,27 @@ object QuadraticFormula {
   //      Write a test to validate the following function.
 
   def quadraticFormula(a: Int, b: Int, c: Int): List[Double] = {
+    val d = discriminant(a,b,c)
+
+    if ( d == 0)
+      ...
+      else if (d > 0)
+        ...
+        else
+          ...
     List(
       (-b + sqrt(b * b - 4 * a * c)) / (2 * a),
       (-b - sqrt(b * b - 4 * a * c)) / (2 * a)
     ).distinct
   }
 
+  def discriminant (a: Int, b: Int, c: Int):Int = {
+    (b * b - 4 * a * c)
+  }
+val d = discriminant (a,b,c)
+if (d > 0)
+  else if (d < 0)
+    
   // TASK:
   //    Update the formula to compute the discriminant,
   //    and detect whether there are zero, one, or two real roots.
