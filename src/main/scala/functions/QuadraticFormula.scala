@@ -3,30 +3,29 @@ package functions
 import scala.math.sqrt
 
 object QuadraticFormula {
-  // TASK:
-  //      Write a test to validate the following function.
 
+def discriminant (a:Int, b:Int, c:Int): Int = {
+  b*b - 4*a*c
+}
   def quadraticFormula(a: Int, b: Int, c: Int): List[Double] = {
     val d = discriminant(a,b,c)
-
+    //if there is 1 root, return it as a singleton list
     if ( d == 0)
-      ...
+      List(-b / (2.0 * a))
+      //if there are no roots, return an empty list
       else if (d > 0)
-        ...
-        else
-          ...
+        List()
+      //if there are 2 roots, return a list of them in increasing order
+      else (a < 0)
     List(
-      (-b + sqrt(b * b - 4 * a * c)) / (2 * a),
-      (-b - sqrt(b * b - 4 * a * c)) / (2 * a)
+      (-b + sqrt(d)) / (2.0 * a),
+      (-b - sqrt(d)) / (2.0 * a)
     ).distinct
   }
 
-  def discriminant (a: Int, b: Int, c: Int):Int = {
-    (b * b - 4 * a * c)
-  }
-val d = discriminant (a,b,c)
-if (d > 0)
-  else if (d < 0)
+
+  
+
     
   // TASK:
   //    Update the formula to compute the discriminant,
